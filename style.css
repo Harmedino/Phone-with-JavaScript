@@ -1,0 +1,507 @@
+.body{
+    width: 300px;
+    height: 85vh;
+    margin: auto;
+    border: 17px solid blue;
+    border-radius: 30px;
+    border-top: 15px solid blue;
+    border-bottom: 15px solid blue;
+    position: relative;
+    /* z-index: -1; */
+    /* background-color: red; */
+    /* overflow: hidden; */
+}
+::-webkit-scrollbar{
+    width: 4px;
+}
+button{
+    border: none;
+}
+.background{
+    width: 100%;
+    height: 81vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    top: -3px;
+    /* opacity: .8; */
+    position: absolute;
+    z-index: 1 !important;
+    background-image: url("./images/download.jpg"); 
+}
+header{
+    width: 100%;
+    height: 30px;
+    z-index: 5000 !important;
+    top: -6px;
+    position: absolute;
+}
+.camera{
+    width: 120px;
+    margin: auto;
+    background-color: black;
+    height: 25px;
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius: 15px;
+    position: sticky;
+    justify-content: space-around;
+    align-items: center;
+}
+.speaker{
+    width: 50px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: white;
+        opacity: .1;
+}
+.mera{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    opacity: .1;
+    border-radius: 100%;
+}
+.power{
+    position: absolute;
+    width: 5px;
+    /* z-index: 20px !important; */
+    height: 40px;
+    background-color: blue;
+    top: 170px;
+    border-radius: 50px;
+    right: -20px;
+}
+.volume-plus{
+    position: absolute;
+        width: 5px;
+        height: 40px;
+        background-color: blue;
+        top: 70px;
+        border-radius: 50px;
+        right: -20px;
+}
+.volume-minus{
+    position: absolute;
+        width: 5px;
+        height: 40px;
+        background-color: blue;
+        top: 115px;
+        border-radius: 50px;
+        right: -20px;
+}
+#start{
+    height: 20px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 1px;
+}
+#start2{
+    height: 30px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    font-weight: 700;
+    top: 150px;
+    left: 70px;
+    color: white;
+}
+#start3{
+    height: 30px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    font-weight: 700;
+    top: 200px;
+    left: 70px;
+    color: white;
+}
+.default-screen{
+    width: 100%;
+    height: 81vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+    top: -3px;
+    position: absolute;
+    /* z-index: -1 !important; */
+    background-image: url("./images/download\ \(1\).jpg");
+}
+.app-screen-footer{
+    height: 60px;
+    width: 100%;
+    margin-top: 50px;
+    position: absolute;
+    bottom: 20px;
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.app-screen-footer button{
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+.app-screen-footer img{
+    width: 35px;
+}
+.app-screen-footer i {
+    width: 35px;
+    font-size: 30px;
+    color: rgb(73, 72, 72);
+}
+.footer{
+    background-color: rgb(26, 25, 25);
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: -0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+.footer img{
+    width: 50px;
+    color: white;
+}
+
+.dial{
+    width: 100%;
+    height: 81vh;
+    top: -3px;
+    border-radius: 15px;
+    /* opacity: .8; */
+    position: absolute;
+    /* z-index: -1 !important; */
+    background-color: aliceblue;
+}
+.dial .numbers .call{
+    width: 50%;
+    left: 70px;
+    height: 50px;
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.dial .numbers .call img{
+    width: 40px;
+}
+.dial .numbers{
+    margin-top: 200px;
+    height: 300px;
+    width: 100%;
+    /* box-shadow: 5px 0px 4px rgb(139, 139, 139); */
+}
+.row{
+    justify-content: space-around;
+    align-items: center;
+   
+}
+.hidden{
+    display: none !important;
+}
+.screen{
+    width: 100%;
+    height: 50px;
+    padding: 2px 25px;
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+    /* z-index: 1050; */
+    position: relative;
+}
+.screen i{
+    color: white;
+    position: absolute;
+    right: 20px;
+    background-color: lightgreen;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    text-align: right;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.row button{
+    width: 80px;
+    height: 50px;
+    border-radius: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: transparent;
+}
+.row button span{
+    font-size: 14px;
+    font-weight: 400;
+}
+.contact{
+    width: 100%;
+    height: 82vh;
+    background-color: blanchedalmond;
+    top: -3px;
+    position: absolute;
+    /* z-index: -1; */
+}
+.contact-header{
+    position: sticky;
+    height: 40px;
+    width: 100%;
+    background-color: #fff;
+    top:25px;
+}
+.footer2{
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center !important;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    cursor: grab;
+}
+.footer2 p{
+    text-align: center;
+    width: 30%;
+}
+.modal1{
+    height: 81vh;
+    width: 90%;
+    position: absolute !important;
+    top: -3px;
+    border-radius: 15px;
+    /* opacity: .2; */
+    background-color: rgb(201, 207, 201);
+   /* z-index: -1; */
+}
+.pad{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: green;
+    position: absolute;
+    bottom: 90px;
+    left: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+.modal2{
+    cursor: pointer;
+   height: 170px;
+   width: 90%;
+    background-color: white;
+    top: 170px;
+    /* opacity: 1 !important; */
+    position: absolute !important;
+    border-radius: 10px;
+    padding: 10px 15px 10px 10px;
+}
+.modal2 a{
+    text-decoration: none;
+    font-size: 12px ;
+}
+.calling-set{
+    position: absolute;
+    background-image: url('./images/5.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 81vh;
+    top: -3px;
+    border-radius: 15px;
+}
+.logging{
+    margin-top: 140px;
+    width: 100%;
+    height: 300px;
+}
+.fa-phone{
+    transform: rotate(135deg);
+}
+.circle{
+    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.btn-danger{
+    margin-top: 70px;
+}
+.lling{
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+.width{
+    width: 70px;
+    height: 50px;
+    margin-top: 70px;
+    margin-left: 10px;;
+}
+.contact-list{
+    width: 100%;
+    height: 81vh;
+    background-color: rgb(235, 233, 233);
+    border-radius: 15px;
+    position: absolute;
+}
+.list aside{
+    width: 20%;
+    min-height: 300px;
+    border: 1px solid darkblue;
+    text-align: center;
+}
+.aside  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    text-transform: uppercase;
+    background-color: grey;
+    border-radius: 100%;
+}
+.list{
+    position: absolute;
+    width: 100%;
+    height: 500px;
+}
+.spinner1{
+    width: 100%;
+    height: 81vh;
+    border-radius: 15px;
+    position: absolute;
+    background-color: violet;
+}
+.spinner{
+    width: 80%;
+    height: 100px;
+    border-radius: 10px;
+    background-color: rgb(68, 52, 52);
+    margin: auto;
+    margin-top: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.js-fl{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+hr{
+    margin-top: -1px !important;
+}
+.name{
+    margin-bottom: -2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.save-contact{
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    height: 150px;
+    margin-top: 150px;
+    background-color: rgb(231, 228, 228);
+}
+ .top{
+    justify-content: space-around;
+}
+.save-contact input{
+    margin: 10px 10px;
+    border-radius: 5px;
+    padding: 4px;
+}
+.rel{
+    width: 100%;
+    height: 64vh;
+    position: relative;
+    overflow-y: scroll;
+    top: 110px;
+    border-radius: 15px;
+}
+.search{
+    min-height: 50px;
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    border-radius: 10px;
+}
+.call-display{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+}
+.balance{
+    width: 100%;
+    height: 81vh;
+    border-radius: 15px;
+    position: absolute;
+    background-color: rgb(144, 41, 144);
+}
+.text{
+    width: 80%;
+    margin: auto;
+    height: 100px;
+    border-radius: 10px;
+    background-color: teal;
+    margin-top: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+/* RECHARGE CARD */
+
+.load{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+  .error {
+      margin-top: 10px;
+      color: red;
+      margin-left: 30px;
+      display: inherit !important;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+  }
+  h2{
+    font-weight: 700 !important;
+    color: rgb(18, 125, 25);
+  }
+  
