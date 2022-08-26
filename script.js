@@ -19,6 +19,7 @@ let number = document.getElementById('number');
 let contactList = document.querySelector('.contact-list');
 let saveContact = document.querySelector('.save-contact');
 let timer = document.querySelector('.timer');
+const vol = document.getElementById('volume2');
 
 myContact = []
 
@@ -37,6 +38,37 @@ setInterval(() => {
 
 
 }, 100);
+
+let addt = 0;
+let volume;
+function volumeP(add) {
+
+    vol.hidden = false;
+    // const element = array a];
+    if (add == "up" && addt < 265) {
+
+        addt += 15
+        adding()
+
+    } else if (add == 'down' && addt >= 10) {
+        addt -= 15
+        adding()
+    }
+
+}
+function adding() {
+    volume2.innerHTML = `
+    <div class="innerv" style="width:${addt}px ;"></div>`
+    localStorage.setItem('volume', JSON.stringify(addt));
+    setTimeout(() => {
+        vol.hidden = true;
+    }, 4000);
+}
+
+
+
+
+
 
 function onScreen() {
     // time_header.hidden = false;
@@ -97,11 +129,9 @@ function mtnDial() {
             alert('card')
 
         } else if (dial) {
-            console.log('sory');
             caller.hidden = true;
             spinner.hidden = false;
             spinner1.hidden = false;
-            alert('balance')
             spinner1.hidden = false;
             balance1.hidden = false;
             balance.innerHTML = `Your account balance is #${recharge}`
@@ -133,40 +163,55 @@ function airDial() {
 
     }
 }
-function cut_call() {
-    calling_set.hidden = true;
-    dial.hidden = false;
-    caller.hidden = true;
-}
+
 
 // CALLER COUNTER
 
 let numbs = document.getElementById('numbs')
 let second = 0;
 let second2 = 0;
-let clear
+let clear;
+let t = 0;
+
 function timerr() {
-    let clear = setInterval(() => {
+    t = 0
+    clear = setInterval(() => {
         timer.innerHTML = ''
         timer.innerHTML = `${second2}:${second}`
 
         if (clear) {
-            second++
-            // return;
+            second++;
         }
         if (second == 60) {
             second2++
-            console.log(second2);
             second = 0
             return;
         }
-
-
-        // lastModal.classList.remove('hidden2')
+        t++
     }, 1000);
 }
 
 
+
+//  CUT CALL 
+function cut_call() {
+
+    calling_set.hidden = true;
+    dial.hidden = false;
+    caller.hidden = true;
+    console.log(timer.innerHTML);
+    let p = (t * 11 / 100)
+    // console.log(p);
+
+    recharge -= p;
+    localStorage.setItem('rechargeBalance', JSON.stringify(recharge))
+    console.log(recharge);
+    clearInterval(clear);
+    timer.innerHTML = 'calling.....'
+    second = 0;
+    second2 = 0;
+
+}
 
 
 // contact 
@@ -211,9 +256,8 @@ function showContact() {
 }
 
 function calt() {
-    alert()
-    saveContact.hidden = true;
-    calling_set.hidden = true;
+    contactList.hidden = true;
+    caller.hidden = false;
 }
 
 function getlocalstorage() {
@@ -270,10 +314,9 @@ function loadCard() {
             }
             else if (element.status !== "USED" && load.value !== '') {
                 caller.hidden = true;
-                alert()
-                // balance1.hidden= true;
-                balance2.hidden = false
-                balance2.innerHTML = `You have successfully recharge #${element.amount} of card`
+                spinner1.hidden = false;
+                balance1.hidden = false;
+                balance.innerHTML = `You have successfully recharge #${element.amount} of card`
 
                 if (recharge != 0) {
                     let bal = Number(recharge) + Number(element.amount)
@@ -386,7 +429,7 @@ localStorageData()
 
 // let newBal;
 function getBal() {
-    let newBal = localStorage.getItem('rechargeBalance')
+    let newBal = localStorage.getItem('rechargeBalance');
     if (newBal) {
         recharge = JSON.parse(newBal)
     } else {
@@ -394,3 +437,17 @@ function getBal() {
     }
 }
 getBal()
+
+function getvolume() {
+    let newvol = localStorage.getItem('volume');
+    if (newvol) {
+        addt = JSON.parse(newvol)
+        console.log(addt);
+        adding()
+    } else {
+        addt = addt
+        console.log(addt);
+        adding()
+    }
+}
+getvolume()

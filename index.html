@@ -32,7 +32,7 @@
                 <div class="mera"></div>
             </div>
         </header>
-        <div class="background" ondblclick="onScreen()">
+        <div class="background" ondblclick="onScreen()" hidden>
             <div id="start2">
                 <h1 id="mhor"></h1>
                 <h1 id="mmin"></h1>
@@ -43,14 +43,18 @@
             </div>
         </div>
 
+
         <!-- VOLUME AND POWER BUTTON -->
-        <div class="volume-plus"></div>
-        <div class="volume-minus"></div>
+
+        <div id="volume2" hidden>
+        </div>
+        <div class="volume-plus" onclick="volumeP('up')"></div>
+        <div class="volume-minus" onclick="volumeP('down')"></div>
         <div class="power"></div>
 
 
 
-        <div class="default-screen" hidden>
+        <div class="default-screen">
             <div class="app-screen-footer">
                 <button onclick="phone12()"><img src="./images/download__2.png" alt=""></button>
                 <button><i class="fa fa-camera"></i></button>
@@ -99,9 +103,7 @@
         </div>
         <div class="contact" hidden>
 
-            <div class="contact-header">
-                <input type="text">
-            </div>
+
             <div class="pad" onclick="keyPad()">
                 <i class="fa fa-th"></i>
             </div>
@@ -130,7 +132,7 @@
 
         <div class="balance" hidden>
             <div class="text">
-                <p id="balance" class="p-5"></p>
+                <p id="balance" class="p-2"></p>
 
             </div>
         </div>
@@ -217,43 +219,39 @@
 
     <!-- RECHARGE CARD -->
 
+    <div hidden>
 
-    <center>
-        <h2 class="mt-3 ">RECHARGE CARD GENERATOR</h2>
-    </center>
-    <div class="card w-30 mt-5 ml-4 mb-5">
-        <div>
-            <select name="text" id="text" class="p-2 m-2">
-                <option value="MTN">MTN</option>
-                <option value="AIRTEL">AIRTEL</option>
-                <option value="GLO">GLO</option>
-                <option value="9MOBILE">9MOBILE</option>
-            </select>
+        <center>
+            <h2 class="mt-3 ">RECHARGE CARD GENERATOR</h2>
+        </center>
+        <div class="card w-30 mt-5 ml-4 mb-5">
+            <div>
+                <select name="text" id="text" class="p-2 m-2">
+                    <option value="MTN">MTN</option>
+                    <option value="AIRTEL">AIRTEL</option>
+                    <option value="GLO">GLO</option>
+                    <option value="9MOBILE">9MOBILE</option>
+                </select>
 
-            <br>
-            <label for="text" class="mt-4">Amount</label> <br>
-            <input type="number" class="p-2" id="amount">
-            <p id="err"></p>
-            <br>
-            <button class="btn btn-success text-ligt p-2 mt-4" onclick="buy()">Generate pin</button> <input type="text"
-                class="mt-4 d-none" id="gPin">
-        </div>
+                <br>
+                <label for="text" class="mt-4">Amount</label> <br>
+                <input type="number" class="p-2" id="amount">
+                <p id="err"></p>
+                <br>
+                <button class="btn btn-success text-ligt p-2 mt-4" onclick="buy()">Generate pin</button> <input
+                    type="text" class="mt-4 d-none" id="gPin">
+            </div>
 
-        <table id="serial" class="table table-dark table-boardered mt-5">
-            <!-- <tr class="mt-2">
-                <th>S/N</th>
-                <th>NETWORK</th>
-                <th>AMOUNT</th>
-                <th>CODE</th>
-                <th>ACTION</th>
-            </tr> -->
-
-        </table>
+            <table id="serial" class="table table-dark table-boardered mt-5">
 
 
-        <div class="load">
-            <input type="text" id="load" class="pr-4 pb-3"> <br>
-            <button class="mt-2 btn-danger btn  " onclick="loadCard()">load card</button>
+            </table>
+
+
+            <div class="load">
+                <input type="text" id="load" class="pr-4 pb-3"> <br>
+                <button class="mt-2 btn-danger btn  " onclick="loadCard()">load card</button>
+            </div>
         </div>
     </div>
 </body>
