@@ -57,16 +57,23 @@
         <div class="default-screen">
             <div class="app-screen-footer">
                 <button onclick="phone12()"><img src="./images/download__2.png" alt=""></button>
-                <button><i class="fa fa-camera"></i></button>
+                <button onclick="camera()"><i class="fa fa-camera"></i></button>
                 <button><i class="fa fa-twitter text-primary"></i></button>
                 <button><i class="fa fa-home text-grey"></i></button>
             </div>
-            <div class="app-screen-header">
 
+            <div class="app-screen-header">
+                <button onclick="tweet()"><i class="fa-brands fa-twitter"><a href="https://twitter.com/i/flow/signup"
+                            target="iframe_a">
+                        </a></i></button>
+                <button><i class="fa fa-facebook"></i></button>
             </div>
 
         </div>
-
+        <div class="twitter" hidden>
+            <iframe height="100%" width="10 0%" name="iframe_a">
+            </iframe>
+        </div>
 
         <div class="dial" hidden>
 
@@ -214,7 +221,11 @@
             <input type="text" name="name" id="name" placeholder="Name"><br>
             <input type="number" name="number" id="number" placeholder="Add Mobile NO">
         </div>
+
+        <video autoplay hidden></video>
     </div>
+
+
 
 
     <!-- RECHARGE CARD -->
@@ -254,8 +265,29 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
 
 <script src="script.js"></script>
+<script>
+    const video = document.querySelector('video');
+    function camera() {
+        video.hidden = false;
+        default_screen.hidden = true;
+    }
+    const options = {
+        video: true
+    }
+
+    navigator.mediaDevices.getUserMedia(options)
+        .then(function (stream) {
+            video.srcObject = stream
+            // console.log();
+        })
+
+        .catch((error) => {
+            console.log('am error');
+        })
+</script>

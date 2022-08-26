@@ -1,3 +1,22 @@
+// import Webcam from 'webcam-easy';
+// console.log(window);
+let twitter = document.querySelector('.twitter');
+function tweet() {
+    twitter.hidden = false;
+    // console.log(twitter);
+}
+// const webcamElement = document.getElementById('webcam');
+// const canvasElement = document.getElementById('canvas');
+// const snapSoundElement = document.getElementById('snapSound');
+// // const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
+
+// webcam.start()
+//     .then(result => {
+//         console.log("webcam started");
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     });
 
 let later = document.getElementById('full-date');
 let time = document.getElementById('start').innerHTML;
@@ -11,7 +30,6 @@ let calling = document.querySelector('.numbers');
 let contact = document.querySelector('.contact');
 let calling_set = document.querySelector('.calling-set');
 let spinner = document.querySelector('.spinner1');
-let spinner1 = document.querySelector('.spinner');
 let balance1 = document.querySelector('.balance');
 let balance2 = document.querySelector('.balance2');
 let name1 = document.getElementById('name');
@@ -118,6 +136,10 @@ function mtnDial() {
     let pattern3 = /#$/
     let move = pattern3.test(screen2)
     if (move) {
+        caller.hidden = true;
+        spinner.hidden = false;
+        balance1.hidden = false;
+        balance.innerHTML = `INVALID USSD NUMBER`
         let pattern = /[*]{1}[5]{2}[6]{1}/
         let pattern2 = /[*]{1}[5]{3}[*]{1}[0-9]{11}/;
         let dial = pattern.test(screen2)
@@ -131,7 +153,6 @@ function mtnDial() {
         } else if (dial) {
             caller.hidden = true;
             spinner.hidden = false;
-            spinner1.hidden = false;
             spinner1.hidden = false;
             balance1.hidden = false;
             balance.innerHTML = `Your account balance is #${recharge}`
